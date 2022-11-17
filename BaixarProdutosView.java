@@ -10,6 +10,8 @@
  */
 package controledeestoque.view;
 
+import controledeestoque.Controller.ProdutoController;
+
 /**
  *
  * @author Aluno
@@ -46,8 +48,18 @@ public class BaixarProdutosView extends javax.swing.JPanel {
         jLabel3.setText("Quantidade:");
 
         jBBaixar.setText("Baixar");
+        jBBaixar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBBaixarActionPerformed(evt);
+            }
+        });
 
         jBLimpar.setText("Limpar");
+        jBLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBLimparActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
         jPanel.setLayout(jPanelLayout);
@@ -100,6 +112,23 @@ public class BaixarProdutosView extends javax.swing.JPanel {
             .addComponent(jPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+private void jBLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimparActionPerformed
+// TODO add your handling code here:
+    limparCampos();
+}//GEN-LAST:event_jBLimparActionPerformed
+private void limparCampos(){
+        jTCodigo.setText("");
+        jTQuantidade.setText("");
+}
+private void jBBaixarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBaixarActionPerformed
+// TODO add your handling code here:
+    ProdutoController produtoController = new ProdutoController();
+    produtoController.Baixar((Integer.parseInt
+            (jTCodigo.getText())),Integer.
+            parseInt(jTQuantidade.getText()));
+}//GEN-LAST:event_jBBaixarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBBaixar;
     private javax.swing.JButton jBLimpar;

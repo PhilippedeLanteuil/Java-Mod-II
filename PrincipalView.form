@@ -94,11 +94,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Inserir Produtos"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBInserirActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jBBaixar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Baixar Produtos"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBBaixarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jBRelatorio">
           <Properties>
@@ -109,6 +115,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Sair"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBSairActionPerformed"/>
+          </Events>
         </Component>
         <Container class="javax.swing.JTabbedPane" name="tabbedPaneCentral">
 

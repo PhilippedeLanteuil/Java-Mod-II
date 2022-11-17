@@ -4,6 +4,8 @@
  */
 package controledeestoque;
 
+import controledeestoque.view.PrincipalView;
+
 /**
  *
  * @author Aluno
@@ -15,5 +17,9 @@ public class ControledeEstoque {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        PrincipalView principalView = new PrincipalView();
+        principalView.validate();
+        principalView.pack();
+        principalView.setVisible(true);
     }
 }

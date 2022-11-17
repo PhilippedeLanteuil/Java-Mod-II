@@ -10,6 +10,8 @@
  */
 package controledeestoque.view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Aluno
@@ -40,16 +42,31 @@ public class PrincipalView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        labelControleDeEstoque.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelControleDeEstoque.setFont(new java.awt.Font("Tahoma", 1, 14));
         labelControleDeEstoque.setText("Controle de Estoque");
 
         jBInserir.setText("Inserir Produtos");
+        jBInserir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBInserirActionPerformed(evt);
+            }
+        });
 
         jBBaixar.setText("Baixar Produtos");
+        jBBaixar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBBaixarActionPerformed(evt);
+            }
+        });
 
         jBRelatorio.setText("Relatório de Estoque");
 
         jBSair.setText("Sair");
+        jBSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelBotoesLayout = new javax.swing.GroupLayout(panelBotoes);
         panelBotoes.setLayout(panelBotoesLayout);
@@ -103,6 +120,29 @@ public class PrincipalView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+private void jBSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSairActionPerformed
+// TODO add your handling code here:
+    if (JOptionPane.showConfirmDialog(this, "Deseja mesmo fechar o sistema?", "Confirmação", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION){
+        System.exit(0);
+    }
+}//GEN-LAST:event_jBSairActionPerformed
+
+private void jBInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBInserirActionPerformed
+// TODO add your handling code here:
+    tabbedPaneCentral.removeAll();;
+    tabbedPaneCentral.add("Inserir Produtos", new InserirProdutosView());
+    tabbedPaneCentral.validate();
+    tabbedPaneCentral.repaint();
+}//GEN-LAST:event_jBInserirActionPerformed
+
+private void jBBaixarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBaixarActionPerformed
+// TODO add your handling code here:
+    tabbedPaneCentral.removeAll();;
+    tabbedPaneCentral.add("Baixar Produtos", new BaixarProdutosView());
+    tabbedPaneCentral.validate();
+    tabbedPaneCentral.repaint();
+}//GEN-LAST:event_jBBaixarActionPerformed
 
     /**
      * @param args the command line arguments
